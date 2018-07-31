@@ -135,7 +135,7 @@ class MultiGoalEnv(gym.Env):
 #             reward += self.goal_reward
 #         else:
         done = self.time_step > self.max_time_step
-        if dist_to_goal < self.goal_threshold:
+        if dist_to_goal < 0.3:
             gaol_id = np.argmin(dist_to_goal_list)
         
         self.observation = np.copy(next_obs)
